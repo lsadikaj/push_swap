@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 10:11:51 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/15 15:12:25 by lsadikaj         ###   ########.fr       */
+/*   Created: 2025/01/15 15:31:23 by lsadikaj          #+#    #+#             */
+/*   Updated: 2025/01/15 15:35:03 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int	main(int argc, char **argv)
+static void	rotate(t_stack_node **stack)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_stack_node	*last_node;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	else if (argc == 2)
-		argv = split(argv[1], ' ');
-	init_stack_a(&a, argv + 1);
-	if (!stack_sorted(a))
-	{
-		if (stack_len(a) == 2)
-			sa(&a, false);
-		else if (stack_len(a) == 3)
-			sort_three(&a);
-		else
-			sort_stack(&a, &b);
-	}
-	free_stack(&a);
-	return (0);
+	if (!*stack || !(*stack)->next)
+		return ;
+	last_node = find_last(*stack);
+	last_node->next = *stack;
+	*stack = (*stack)->next;
 }
