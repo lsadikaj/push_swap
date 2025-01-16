@@ -6,12 +6,13 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:35:09 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/15 15:09:41 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/16 11:46:13 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+// Checks if the given string is a valid number
 int	error_syntax(char *str_n)
 {
 	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
@@ -26,6 +27,7 @@ int	error_syntax(char *str_n)
 	return (0);
 }
 
+// Detects duplicate numbers in the stack
 int	error_duplicate(t_stack_node *a, int n)
 {
 	if (!a)
@@ -39,6 +41,7 @@ int	error_duplicate(t_stack_node *a, int n)
 	return (0);
 }
 
+// Frees all nodes in a stack to prevent memory leaks
 void	free_stack(t_stack_node **stack)
 {
 	t_stack_node	*temp;
@@ -57,6 +60,7 @@ void	free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
+// Cleans up resources and exits the program when an error occurs
 void	free_errors(t_stack_node **a)
 {
 	free_stack(a);

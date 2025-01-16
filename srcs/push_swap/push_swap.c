@@ -6,12 +6,13 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:11:51 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/15 15:12:25 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/16 11:43:05 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+// Handle program initialization, input validation, and sorting logic
 int	main(int argc, char **argv)
 {
 	t_stack_node	*a;

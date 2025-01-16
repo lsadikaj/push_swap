@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 09:51:25 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/15 10:08:00 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/16 11:27:03 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <limits.h>
 # include "../libft/libft.h"
 # include "../libft/ft_printf.h"
+# include "../libft/get_next_line.h"
 
 typedef struct s_stack_node
 {
