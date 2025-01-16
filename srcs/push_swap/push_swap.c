@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:11:51 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/16 11:43:05 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:01:55 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 		else if (stack_len(a) == 3)
 			sort_three(&a);
 		else
-			sort_stack(&a, &b);
+			sort_stacks(&a, &b);
 	}
 	free_stack(&a);
 	return (0);

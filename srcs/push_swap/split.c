@@ -6,12 +6,13 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:00:59 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/15 15:09:35 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:08:31 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+// Count the number of words separated by the delimiter
 static int	count_words(char *s, char c)
 {
 	int		count;
@@ -28,7 +29,7 @@ static int	count_words(char *s, char c)
 			if (!inside_word)
 			{
 				count++;
-				iniside_word = true;
+				inside_word = true;
 			}
 			s++;
 		}
@@ -36,6 +37,7 @@ static int	count_words(char *s, char c)
 	return (count);
 }
 
+// Returns the next word from the string, using a static cursor to keep track
 static char	*get_next_word(char *s, char c)
 {
 	static int	cursor = 0;
@@ -58,6 +60,7 @@ static char	*get_next_word(char *s, char c)
 	return (next_word);
 }
 
+// Splits the input string into an array of words separated by the delimiter
 char	**split(char *s, char c)
 {
 	int		words_count;
@@ -66,9 +69,9 @@ char	**split(char *s, char c)
 
 	i = 0;
 	words_count = count_words(s, c);
-	if (!count_words)
+	if (!words_count)
 		exit(1);
-	result_array = (char **)malloc(sizeof(char *) * (count_words + 2));
+	result_array = (char **)malloc(sizeof(char *) * (count_words(s, c) + 2));
 	if (!result_array)
 		return (NULL);
 	while (words_count-- >= 0)

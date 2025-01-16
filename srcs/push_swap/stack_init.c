@@ -6,12 +6,13 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:18:08 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/15 15:09:47 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:32:28 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+// Converts a string to a long integer
 static long	ft_atol(const char *s)
 {
 	long	result;
@@ -32,6 +33,7 @@ static long	ft_atol(const char *s)
 	return (result * sign);
 }
 
+// Adds a new node with the given value to the end of the stack
 static void	append_node(t_stack_node **stack, int n)
 {
 	t_stack_node	*node;
@@ -58,7 +60,8 @@ static void	append_node(t_stack_node **stack, int n)
 	}
 }
 
-void	init_stack_a(t_stack_node *a, char **argv)
+// Initializes stack a with validated input values
+void	init_stack_a(t_stack_node **a, char **argv)
 {
 	long	n;
 	int		i;
@@ -78,6 +81,7 @@ void	init_stack_a(t_stack_node *a, char **argv)
 	}
 }
 
+// Finds the node with the lowest cost marked as cheapest
 t_stack_node	*get_cheapest(t_stack_node *stack)
 {
 	if (!stack)
@@ -91,7 +95,8 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 	return (NULL);
 }
 
-void	prep_for_push(t_stack_nod **stack, t_stack_node *top_node, char stack_name)
+// Prepares the stack for pushing by rotating it to align with the top node
+void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name)
 {
 	while (*stack != top_node)
 	{
@@ -104,7 +109,7 @@ void	prep_for_push(t_stack_nod **stack, t_stack_node *top_node, char stack_name)
 		}
 		else if (stack_name == 'b')
 		{
-			if (top_node->abose_median)
+			if (top_node->above_median)
 				rb(stack, false);
 			else
 				rrb(stack, false);

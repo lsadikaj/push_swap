@@ -6,12 +6,13 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 13:08:26 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/15 15:09:30 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:39:23 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+// Assigns an index to each node and determines if it is above the median
 void	current_index(t_stack_node *stack)
 {
 	int	i;
@@ -33,6 +34,7 @@ void	current_index(t_stack_node *stack)
 	}
 }
 
+// Assigns the optimal target node in stack b for each node in stack a
 static void	set_target_a(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_b;
@@ -60,6 +62,7 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 	}
 }
 
+// Calculates the cost for each node in stack a to be moved to stack b
 static void	cost_analysis(t_stack_node *a, t_stack_node *b)
 {
 	int	len_a;
@@ -71,15 +74,16 @@ static void	cost_analysis(t_stack_node *a, t_stack_node *b)
 	{
 		a->push_cost = a->index;
 		if (!(a->above_median))
-			a->push_cost = leln_a - (a->index);
+			a->push_cost = len_a - (a->index);
 		if (a->target_node->above_median)
 			a->push_cost += a->target_node->index;
 		else
-			a->push_cost += len_b - (a->taget_node->index);
+			a->push_cost += len_b - (a->target_node->index);
 		a = a->next;
 	}
 }
 
+// Marks the node with the lowest cost for movement
 void	set_cheapest(t_stack_node *stack)
 {
 	long			cheapest_value;
@@ -100,11 +104,12 @@ void	set_cheapest(t_stack_node *stack)
 	cheapest_node->cheapest = true;
 }
 
+// Prepares nodes in stack a for sorting by setting targets and costs
 void	init_nodes_a(t_stack_node *a, t_stack_node *b)
 {
 	current_index(a);
 	current_index(b);
 	set_target_a(a, b);
-	cost_analysis_a(a, b);
+	cost_analysis(a, b);
 	set_cheapest(a);
 }

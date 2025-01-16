@@ -6,12 +6,13 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:55:49 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/15 15:09:53 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/16 16:44:13 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+// Returns the total number of nodes in the stack
 int	stack_len(t_stack_node *stack)
 {
 	int	count;
@@ -27,15 +28,7 @@ int	stack_len(t_stack_node *stack)
 	return (count);
 }
 
-t_stack_node	*find_last(t_stack_node *stack)
-{
-	if (!stack)
-		return (NULL);
-	while (stack->next)
-		stack = stack->next;
-	return (stack);
-}
-
+// Checks if the stack is sorted in ascending order
 bool	stack_sorted(t_stack_node *stack)
 {
 	if (!stack)
@@ -49,6 +42,17 @@ bool	stack_sorted(t_stack_node *stack)
 	return (true);
 }
 
+// Returns the last node in the stack
+t_stack_node	*find_last(t_stack_node *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
+}
+
+// Finds and returns the node with the smallest value in the stack
 t_stack_node	*find_min(t_stack_node *stack)
 {
 	long			min;
@@ -69,6 +73,7 @@ t_stack_node	*find_min(t_stack_node *stack)
 	return (min_node);
 }
 
+// Finds and returns the node with the largest value in the stack
 t_stack_node	*find_max(t_stack_node *stack)
 {
 	long			max;

@@ -6,12 +6,13 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 15:31:23 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/16 10:04:33 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:41:07 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+// Rotates the stack upwards, moving the first node to the end
 static void	rotate(t_stack_node **stack)
 {
 	t_stack_node	*last_node;
@@ -26,6 +27,7 @@ static void	rotate(t_stack_node **stack)
 	last_node->next->next = NULL;
 }
 
+// Rotates stack a upwards
 void	ra(t_stack_node **a, bool print)
 {
 	rotate(a);
@@ -33,6 +35,7 @@ void	ra(t_stack_node **a, bool print)
 		ft_printf("ra\n");
 }
 
+// Rotates stack b upwards
 void	rb(t_stack_node **b, bool print)
 {
 	rotate(b);
@@ -40,10 +43,11 @@ void	rb(t_stack_node **b, bool print)
 		ft_printf("rb\n");
 }
 
+// Rotates both stack a and stack b upwards simultaneously
 void	rr(t_stack_node **a, t_stack_node **b, bool print)
 {
 	rotate(a);
 	rotate(b);
 	if (!print)
-		ft_printf("rr\n")
+		ft_printf("rr\n");
 }

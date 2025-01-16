@@ -6,12 +6,13 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:10:03 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/16 10:12:52 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/16 17:40:23 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+// Sorts a stack with exactly three elements
 void	sort_three(t_stack_node **a)
 {
 	t_stack_node	*biggest_node;
