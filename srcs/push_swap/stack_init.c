@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:18:08 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/16 18:32:28 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/17 11:33:10 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	append_node(t_stack_node **stack, int n)
 {
 	t_stack_node	*node;
 	t_stack_node	*last_node;
-	
+
 	if (!stack)
 		return ;
 	node = malloc(sizeof(t_stack_node));
@@ -96,7 +96,8 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 }
 
 // Prepares the stack for pushing by rotating it to align with the top node
-void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name)
+void	prep_for_push(t_stack_node **stack, t_stack_node *top_node,
+						char stack_name)
 {
 	while (*stack != top_node)
 	{

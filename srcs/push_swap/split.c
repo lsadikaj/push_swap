@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:00:59 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/16 18:08:31 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/17 11:30:05 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static char	*get_next_word(char *s, char c)
 
 	len = 0;
 	i = 0;
-	while (s[cursor] ==  c)
+	while (s[cursor] == c)
 		cursor++;
 	while ((s[cursor + len] != c) && s[cursor + len])
 		len++;

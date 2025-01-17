@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 13:08:26 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/16 18:39:23 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/17 11:31:42 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static void	cost_analysis(t_stack_node *a, t_stack_node *b)
 {
 	int	len_a;
 	int	len_b;
-	
+
 	len_a = stack_len(a);
 	len_b = stack_len(b);
 	while (a)
@@ -88,7 +88,7 @@ void	set_cheapest(t_stack_node *stack)
 {
 	long			cheapest_value;
 	t_stack_node	*cheapest_node;
-	
+
 	if (!stack)
 		return ;
 	cheapest_value = LONG_MAX;

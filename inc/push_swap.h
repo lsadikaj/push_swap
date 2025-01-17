@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 09:51:25 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/16 18:01:19 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/17 11:59:49 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,15 @@ t_stack_node	*find_last(t_stack_node *stack);
 bool			stack_sorted(t_stack_node *stack);
 t_stack_node	*find_min(t_stack_node *stack);
 t_stack_node	*find_max(t_stack_node *stack);
+
+// Sort stacks utils
+void			rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest_node);
+void			rev_rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest_node);
+void			move_a_to_b(t_stack_node **a, t_stack_node **b);
+void			move_b_to_a(t_stack_node **a, t_stack_node **b);
+void			min_on_top(t_stack_node **a);
 
 // Commands
 void			sa(t_stack_node **a, bool print);

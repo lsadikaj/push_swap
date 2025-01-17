@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:35:09 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/16 16:09:46 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/17 11:31:16 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	error_syntax(char *str_n)
 {
 	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
 		return (1);
-	if ((*str_n == '+' || *str_n == '-') && !(str_n[1] >= '0' && str_n[1] <= '9'))
+	if ((*str_n == '+' || *str_n == '-')
+		&& !(str_n[1] >= '0' && str_n[1] <= '9'))
 		return (1);
 	while (*++str_n)
 	{
