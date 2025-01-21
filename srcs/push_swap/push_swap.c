@@ -6,12 +6,13 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:11:51 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/20 18:58:18 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/21 10:31:30 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
+// Free the memory allocated for the split array
 void	free_split(char **split)
 {
 	int	i;
@@ -25,6 +26,7 @@ void	free_split(char **split)
 	free(split);
 }
 
+// Handle the sorting logic based on the length of stack a
 void	handle_sorting(t_stack_node **a, t_stack_node **b)
 {
 	if (stack_len(*a) == 2)
@@ -35,6 +37,7 @@ void	handle_sorting(t_stack_node **a, t_stack_node **b)
 		sort_stacks(a, b);
 }
 
+// Handle the input arguments and split them if necessary
 int	handle_input(int argc, char ***argv, char ***split_argv)
 {
 	if (argc == 1 || (argc == 2 && !(*argv)[1][0]))
@@ -47,7 +50,7 @@ int	handle_input(int argc, char ***argv, char ***split_argv)
 	return (0);
 }
 
-// Handle program initialization, input validation, and sorting logic
+// Main function to initialize stacks and start the sorting process
 int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
