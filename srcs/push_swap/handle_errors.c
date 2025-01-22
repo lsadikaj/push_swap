@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:35:09 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/17 11:31:16 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:41:22 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	free_stack(t_stack_node **stack)
 // Cleans up resources and exits the program when an error occurs
 void	free_errors(t_stack_node **a)
 {
-	free_stack(a);
-	ft_printf("Error\n");
+	if (a)
+		free_stack(a);
+	write(2, "Error\n", 6);
 	exit(1);
 }

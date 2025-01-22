@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:00:59 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/17 11:30:05 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:41:12 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	**split(char *s, char c)
 	i = 0;
 	words_count = count_words(s, c);
 	if (!words_count)
-		exit(1);
+		free_errors(NULL);
 	result_array = (char **)malloc(sizeof(char *) * (count_words(s, c) + 2));
 	if (!result_array)
 		return (NULL);

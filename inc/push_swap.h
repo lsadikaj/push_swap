@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 09:51:25 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/17 11:59:49 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:41:39 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdbool.h>
 # include <limits.h>
+# include <unistd.h>
 # include "../libft/libft.h"
 # include "../libft/ft_printf/ft_printf.h"
 
