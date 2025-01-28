@@ -6,7 +6,7 @@
 /*   By: lsadikaj <lsadikaj@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:18:08 by lsadikaj          #+#    #+#             */
-/*   Updated: 2025/01/22 16:06:22 by lsadikaj         ###   ########.fr       */
+/*   Updated: 2025/01/28 11:22:29 by lsadikaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	append_node(t_stack_node **stack, int n)
 		return ;
 	node->next = NULL;
 	node->nbr = n;
-	node->cheapest = 0;
+	node->cheapest = false;
 	if (!(*stack))
 	{
 		*stack = node;
